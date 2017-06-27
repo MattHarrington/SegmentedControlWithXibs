@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SegmentedControlWithXibs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PHW-Xq-3XO">
+                                <rect key="frame" x="127" y="28" width="121" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlClicked:" destination="BYZ-38-t0r" eventType="valueChanged" id="d5T-EN-u5b"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Acs-ko-vTQ">
+                                <rect key="frame" x="16" y="64" width="343" height="595"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Acs-ko-vTQ" secondAttribute="bottom" constant="8" symbolic="YES" id="18z-Ie-3R4"/>
+                            <constraint firstItem="Acs-ko-vTQ" firstAttribute="top" secondItem="PHW-Xq-3XO" secondAttribute="bottom" constant="8" symbolic="YES" id="EJZ-PM-c7Y"/>
+                            <constraint firstItem="Acs-ko-vTQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="HsS-fD-51u"/>
+                            <constraint firstItem="PHW-Xq-3XO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="LRt-l4-LTr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Acs-ko-vTQ" secondAttribute="trailing" id="sTP-LB-NhL"/>
+                            <constraint firstItem="PHW-Xq-3XO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u7s-FU-FTp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="Acs-ko-vTQ" id="Taz-gT-e87"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
