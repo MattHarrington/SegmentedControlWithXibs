@@ -16,33 +16,24 @@ class ViewController: UIViewController {
         contentView.viewWithTag(100)?.removeFromSuperview()
         switch sender.selectedSegmentIndex {
         case 0:
-            displayFirstView()
+            displayViewFromNibNamed("FirstView")
         case 1:
-            displaySecondView()
+            displayViewFromNibNamed("SecondView")
         default:
             break
         }
     }
     
     override func viewDidLoad() {
-        displayFirstView()
+        displayViewFromNibNamed("FirstView")
     }
     
-    private func displayFirstView() {
-        if let viewFromXib = Bundle.main.loadNibNamed("FirstView",
-                               owner: self, options: nil)?.first as? UIView {
-            viewFromXib.tag = 100
-            contentView.addSubview(viewFromXib)
-            addConstraintsToView(viewFromXib)
-        }
-    }
-    
-    private func displaySecondView() {
-        if let viewFromXib = Bundle.main.loadNibNamed("SecondView",
-                               owner: self, options: nil)?.first as? UIView {
-            viewFromXib.tag = 100
-            contentView.addSubview(viewFromXib)
-            addConstraintsToView(viewFromXib)
+    private func displayViewFromNibNamed (_ nibName: String) {
+        if let viewFromNib = Bundle.main.loadNibNamed(nibName,
+                                                      owner: self, options: nil)?.first as? UIView {
+            viewFromNib.tag = 100
+            contentView.addSubview(viewFromNib)
+            addConstraintsToView(viewFromNib)
         }
     }
     
